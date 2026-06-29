@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Smart Lock Dashboard</title>
+</head>
+<body>
+
+    <div id="toast" class="toast">New access detected</div>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🔐 Smart Lock Face Recognition</h1>
+        <p>ESP32-CAM + Face Recognition + Flask Dashboard + AES-128 Encrypted Log</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="label">ESP32 Status</div>
+            <div class="value" id="esp32-status">Checking...</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Door Status</div>
+            <div class="value" id="door-status">{{ door_status }}</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Last Face</div>
+            <div class="value" id="last-face">-</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Last Access</div>
+            <div class="value small-value" id="last-access-time">-</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Total Access</div>
+            <div class="value" id="total-access">0</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Granted</div>
+            <div class="value success" id="total-granted">0</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Denied</div>
+            <div class="value denied" id="total-denied">0</div>
+        </div>
+
+        <div class="card">
+            <div class="label">AES-128</div>
+            <div class="value online">Active</div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="panel">
+            <h2>📷 ESP32-CAM Live Stream</h2>
+            <img class="stream" src="{{ stream_url }}" alt="ESP32-CAM Stream">
+            <p class="small">Stream dari ESP32-CAM. Jika tidak tampil, pastikan ESP32-CAM online dan tidak sedang digunakan tab lain.</p>
+        </div>
+
+        <div class="panel">
+            <h2>🚪 Door Control</h2>
+            <p>Status pintu: <b id="door-status-text">{{ door_status }}</b></p>
+
+            <form action="/unlock" method="post">
+                <button type="submit">OPEN DOOR</button>
+            </form>
+
+            <h3>👤 Last Face Capture</h3>
+            <img id="last-face-img" class="last-face-img" src="{{ url_for('static', filename='last_face.jpg') }}" alt="Last Face">
+        </div>
+    </div>
+
+    <div class="panel" style="margin-top:20px;">
+        <h2>📜 Access Log</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Waktu</th>
+                    <th>Aksi</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="log-table"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+"""
