@@ -263,7 +263,15 @@ http://127.0.0.1:5000
 
 Tambahkan screenshot berikut:
 
-![Tampilan Web](https://github.com/danzwel/smart-lock-esp32cam/blob/master/foto_web.png)
+# 📷 Screenshot
+
+### Tampilan Dashboard Web
+
+![Tampilan Web](foto_web.png)
+
+### Tampilan Dashboard Web Lanjutan
+
+![Tampilan Web 2](foto_web1.png)
 
 ---
 
