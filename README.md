@@ -263,14 +263,7 @@ http://127.0.0.1:5000
 
 Tambahkan screenshot berikut:
 
-* Dashboard Utama
-* ESP32-CAM Live Stream
-* Face Recognition Berhasil
-* Manual Unlock
-* Last Face Capture
-* Wiring ESP32-CAM
-* Relay & Solenoid
-* Implementasi Perangkat
+![Tampilan Web](https://github.com/danzwel/smart-lock-esp32cam/blob/master/foto_web.png)
 
 ---
 
